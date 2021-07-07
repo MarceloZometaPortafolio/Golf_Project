@@ -1,18 +1,18 @@
 import './App.css';
+import Home from './Home.js';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
+  return(
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home}/>
 
-
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Welcome to your Golf App!</h2>
-        <br/>
-        <button>Track your strokes!</button>
-      </header>
-    </div>
+        <Route render={() => <h1>404: Page not found</h1>}/>
+      </Switch>
+    </Router>
   );
+  
 }
 
 export default App;
