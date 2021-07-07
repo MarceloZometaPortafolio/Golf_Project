@@ -6,7 +6,7 @@ import React, { useState } from 'react';
  * @param {function} setFunction - Parent's function to hold children's data
  */
 function InputNumber( {setFunction} ) {
-    const [number, setNumber] = useState();
+    const [number, setNumber] = useState(0);
 
     /**
      * Validates user input
@@ -17,7 +17,7 @@ function InputNumber( {setFunction} ) {
         if (number > 0) {
             setFunction(number);
         }
-        else {
+        else {            
             console.error("Invalid number. Must be greater than 0");
         }
     }
