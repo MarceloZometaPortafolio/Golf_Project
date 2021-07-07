@@ -1,10 +1,14 @@
 import './App.css';
+import {useHistory} from 'react-router-dom';
 
 function Home() {
+    const history = useHistory();
 
-  function navigate_to_track() {
-    alert("Navigating to Track your progress")
-  }
+    function navigate_to_track() {
+        console.info("Navigating to Track your progress");
+
+        history.push("/stroke-count");
+    }
 
   return (
     <div className="App">
