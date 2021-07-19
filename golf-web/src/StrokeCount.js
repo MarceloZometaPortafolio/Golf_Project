@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputNumber from "./components/InputNumber";
+import APIClient from './APIClient';
 
 function StrokeCount() {
     const [numberOfHoles, setNumberOfHoles] = useState("");
@@ -9,8 +10,12 @@ function StrokeCount() {
         console.info("Number of holes changed to " + numberOfHoles);
     }
 
+    /**
+     * Create a new game with a specific number of holes.
+     */
     const HandleSubmit = () => {
         console.info("Number passed is " + numberOfHoles);
+        APIClient.createNewGame(numberOfHoles);
     }
 
     return (
